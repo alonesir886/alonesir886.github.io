@@ -18,7 +18,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20200214124814685.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20200214125309898.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20200214131932967.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-02-14T05:24:58.500Z">
+<meta property="og:updated_time" content="2020-02-14T05:36:41.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20200214124814685.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70">
   
@@ -169,7 +169,7 @@
 
         
         <a href="/2020/02/14/MavenWeb%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99/" class="archive-article-date">
-  	<time datetime="2020-02-14T05:29:37.888Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
+  	<time datetime="2020-02-14T05:35:58.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
 </a>
         
       </header>
@@ -178,7 +178,7 @@
       
         <h1 id="MavenWeb项目报错Unable-to-compile-class-for-JSP"><a href="#MavenWeb项目报错Unable-to-compile-class-for-JSP" class="headerlink" title="MavenWeb项目报错Unable to compile class for JSP"></a>MavenWeb项目报错Unable to compile class for JSP</h1><p>今天在运行一个使用Maven管理的简单web项目时报错了，查看错误原因是不能编译JSP文件，报错如下图<br><img src="https://img-blog.csdnimg.cn/20200214124814685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70" alt="运行错误"><br>我是通过maven命令来运行项目的，使用的命令是 ==tomcat:run==，<img src="https://img-blog.csdnimg.cn/20200214125309898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70" alt=""><br><strong>错误原因：</strong><br>经过查找原因发现是tomcat 6不支持jdk1.8，而我的idea的tomcat版本明明是8，为什么会出现上面运行页面上显示的是tomcat 6呢。<br>经过上网查询发现原来使用是运行项目的命令问题，当用 tomcat:run  来运行maven项目时会默认使用tomcat 6来运行项目！靠！所以就导致了JSP不能被编译的问题。但是网上还是大佬多，各种坑都有前人来替你踩了。</p>
 <p><strong>解决方法：</strong><br>将 ==<del>tomcat:run</del>== 命令换成  ==tomcat7:run== 就可以了，因为现在还没出tomcat8的命令，所以tomcat 7的命令就可以解决这个问题了，它支持jdk 8。</p>
-<p>更改后的运行结果：<img src="https://img-blog.csdnimg.cn/20200214131932967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70" alt="成功"><br>完结撒花！</p>
+<p>更改后的运行结果：<br><img src="https://img-blog.csdnimg.cn/20200214131932967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzE2Mzg0,size_16,color_FFFFFF,t_70" alt="成功"><br>完结撒花！</p>
 
       
 
